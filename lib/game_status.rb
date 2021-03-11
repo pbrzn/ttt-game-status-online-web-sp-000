@@ -13,7 +13,7 @@ def won?(board)
   WIN_COMBINATIONS.detect do |winning_spots|
     if winning_spots.all? {|index| board[index]=="X"}
       return winning_spots
-    elsif winning_spots.all? {|index| board[index]==")"}
+    elsif winning_spots.all? {|index| board[index]=="O"}
       return winning_spots
     else
       return nil
