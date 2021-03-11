@@ -10,13 +10,11 @@ WIN_COMBINATIONS=[
   ]
   
 def won?(board)
-  if draw?(board)
-    return false
-  else
-    WIN_COMBINATIONS.detect do |winning_spots|
-      winning_spots.all? do |index|
-        board[index]=="X" && board[index]!="O" || board[index]=="O" && board[index]!="X"
-      end
+  WIN_COMBINATIONS.detect do |winning_spots|
+    if winning_spots.all? {|index| board[index]=="X" && board[index]!="O" || board[index]=="O" && board[index]!="X"}
+      return winning_spots
+    else
+      return nil
     end
   end
 end
