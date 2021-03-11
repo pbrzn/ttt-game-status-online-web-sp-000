@@ -43,7 +43,11 @@ end
 
 def winner(board)
   if won?(board)
-    if won?(board)=["X"
+    if won?(board).detect {|index| board[index]=="X"}
+      return "X"
+    else
+      return "O"
+    end
   else
     nil
   end
