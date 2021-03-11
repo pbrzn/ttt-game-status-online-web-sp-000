@@ -11,7 +11,9 @@ WIN_COMBINATIONS=[
   
 def won?(board)
   WIN_COMBINATIONS.detect do |winning_spots|
-    if winning_spots.all? {|index| board[index]=="X" && index!="O" || index=="O" && board[index]!="X"}
+    if winning_spots.all? {|index| board[index]=="X"}
+      return winning_spots
+    elsif winning_spots.all? {|index| board[index]==")"}
       return winning_spots
     else
       return nil
