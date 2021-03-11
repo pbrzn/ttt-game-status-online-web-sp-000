@@ -41,9 +41,9 @@ def over?(board)
   end
 end
 
-def winner?(board)
+def winner(board)
   if won?(board)
-    won?(board)[0]
+    won?[0]
   else
     nil
   end
